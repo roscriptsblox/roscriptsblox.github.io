@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RobloxScripts - 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    h1 {
+      text-align: center;
+      padding: 20px;
+      font-size: 2.5rem;
+    }
+    .nav {
+      display: flex;
+      justify-content: center;
+      background: #222;
+      padding: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .nav a:hover {
+      color: #ff4d4d;
+    }
+    .script-section {
+      display: none;
+      padding: 20px;
+    }
+    .active-section {
+      display: block;
+    }
+    .script-title {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .script-box {
+      background-color: #222;
+      border-radius: 10px;
+      margin: 20px auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 700px;
+      text-align: center;
+    }
+    .script-box img {
+      width: 100%;
+      border-radius: 10px;
+    }
+.copy-btn {
+  margin-top: 10px;
+  background: #2c2c2c;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.2s ease;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.copy-btn:hover {
+  background: #3d3d3d;
+}
+    .extra-btns {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 10px;
+      box-sizing: border-box;
+    }
+    .extra-btn {
+      background: #550000;
+      color: #fff;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background 0.2s ease;
+      box-sizing: border-box;
+      display: inline-block;
+    }
+    .extra-btn:hover {
+      background: #770000;
+    }
+    .home-card {
+      background: #222;
+      padding: 30px;
+      margin: 30px auto;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 600px;
+    }
+    .home-card img {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+    .home-card h2 {
+      margin-bottom: 15px;
+    }
+  </style>
+  <script>
+    function copyScript(script) {
+      navigator.clipboard.writeText(script).then(() => {
+        alert("Script copied to clipboard!");
+      });
+    }
+
+    function showSection(id) {
+      const sections = document.querySelectorAll('.script-section');
+      sections.forEach(section => section.classList.remove('active-section'));
+      document.getElementById(id).classList.add('active-section');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      showSection('home');
+    });
+  </script>
+</head>
+<body>
+  <h1>RobloxScripts - 2025</h1>
+
+  <div class="nav">
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('adoptme')">Adopt Me</a>
+    <a href="#" onclick="showSection('mm2')">Murder Mystery 2</a>
+  </div>
+
+  <!-- Home Section -->
+  <div id="home" class="script-section">
+    <div class="script-title">My YouTube Channels</div>
+    <div class="home-card">
+      <img src="images/ignite.png" alt="Ignite Scripts">
+      <h2>Ignite Scripts</h2>
+      <a class="copy-btn" href="https://www.youtube.com/@IgniteScripts" target="_blank">Visit Ignite Scripts</a>
+    </div>
+    <div class="home-card">
+      <img src="images/shino.png" alt="Shino Scripts">
+      <h2>Shinoin YT</h2>
+      <a class="copy-btn" href="https://www.youtube.com/@Shinoinyt" target="_blank">Visit Shino Scripts</a>
+    </div>
+  </div>
+
+<!-- Adopt Me Section -->
+<div id="adoptme" class="script-section">
+  <div class="script-title">Adopt Me Scripts</div>
+  <script>
+    const adoptScriptCodes = [
+      "loadstring(game:HttpGet('https://raw.githubusercontent.com/RobloxScripts91/AdoptMeScripts/refs/heads/main/PetSpawnerNew'))()",
+      "loadstring(game:HttpGet('https://raw.githubusercontent.com/RobloxScripts91/AdoptMeScripts/refs/heads/main/PetSpawnerNew'))()",
+      "loadstring(game:HttpGet('https://raw.githubusercontent.com/RobloxScripts91/AdoptMeScripts/refs/heads/main/PetSpawnerNew'))()",
+      "loadstring(game:HttpGet('https://raw.githubusercontent.com/RobloxScripts91/AdoptMeScripts/refs/heads/main/PetSpawnerNew'))()",
+      "loadstring(game:HttpGet('https://raw.githubusercontent.com/RobloxScripts91/AdoptMeScripts/refs/heads/main/PetSpawnerNew'))()"
+    ];
+
+    adoptScriptCodes.forEach((script, i) => {
+      const num = i + 1;
+      document.write(`
+        <div class='script-box'>
+          <img src="images/adoptme${num}.jpg" alt="Adopt Me Script ${num}">
+          <button class="copy-btn" onclick="navigator.clipboard.writeText(\`${script}\`).then(() => alert('Copied Adopt Me Script ${num}!'))">Copy Script</button>
+          <div class="extra-btns">
+            <a class="extra-btn" href="https://www.youtube.com/@skibiditech007" target="_blank">Tutorial Download (IOS/ANDROID)</a>
+            <a class="extra-btn" href="https://deltaexploits.gg/" target="_blank">Android/IOS Delta Executor!</a>
+          </div>
+        </div>
+      `);
+    });
+  </script>
+</div>
+
+<!-- MM2 Section -->
+<div id="mm2" class="script-section">
+  <div class="script-title">Murder Mystery 2 Scripts</div>
+  <script>
+    const mm2Scripts = [
+      "-- Murder Mystery 2 Script 1\nprint('Script 1 active!')",
+      "-- Murder Mystery 2 Script 2\nprint('Script 2 activated!')",
+      "-- Murder Mystery 2 Script 3\nprint('Script 3 running!')",
+      "-- Murder Mystery 2 Script 4\nprint('Script 4 working!')",
+      "-- Murder Mystery 2 Script 5\nprint('Script 5 executing!')"
+    ];
+
+    mm2Scripts.forEach((script, i) => {
+      const num = i + 1;
+      document.write(`
+        <div class='script-box'>
+          <img src="images/mm2_${num}.jpg" alt="Murder Mystery 2 Script ${num}">
+          <button class="copy-btn" onclick="navigator.clipboard.writeText(\`${script}\`).then(() => alert('Copied Murder Mystery 2 Script ${num}!'))">Copy Script</button>
+          <div class="extra-btns">
+            <a class="extra-btn" href="https://www.youtube.com/@skibiditech007" target="_blank">Tutorial Download (IOS/ANDROID)</a>
+            <a class="extra-btn" href="https://deltaexploits.gg/" target="_blank">Android/IOS Delta Executor!</a>
+          </div>
+        </div>
+      `);
+    });
+  </script>
+</div>
+
+
+</body>
+</html>
