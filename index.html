@@ -63,26 +63,25 @@
       width: 100%;
       border-radius: 10px;
     }
-.copy-btn {
-  margin-top: 10px;
-  background: #2c2c2c;
-  color: white;
-  padding: 10px;
-  width: 100%;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  font-family: 'Nunito', sans-serif;
-  font-size: 1rem;
-  font-weight: bold;
-  transition: background 0.2s ease;
-  text-decoration: none;
-  box-sizing: border-box;
-}
-
-.copy-btn:hover {
-  background: #3d3d3d;
-}
+    .copy-btn {
+      margin-top: 10px;
+      background: #2c2c2c;
+      color: white;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background 0.2s ease;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+    .copy-btn:hover {
+      background: #3d3d3d;
+    }
     .extra-btns {
       margin-top: 10px;
       display: flex;
@@ -170,62 +169,95 @@
     </div>
   </div>
 
-<!-- Adopt Me Section -->
-<div id="adoptme" class="script-section">
-  <div class="script-title">Adopt Me Scripts</div>
-  <script>
-    const adoptScriptCodes = [
-      "loadstring(game:HttpGet('https://raw.githubusercontent.com/RobloxScripts91/AdoptMeScripts/refs/heads/main/PetSpawnerNew'))()",
-      "loadstring(game:HttpGet('https://raw.githubusercontent.com/RobloxScripts91/AdoptMeScripts/refs/heads/main/PetSpawnerNew'))()",
-      "loadstring(game:HttpGet('https://raw.githubusercontent.com/RobloxScripts91/AdoptMeScripts/refs/heads/main/PetSpawnerNew'))()",
-      "loadstring(game:HttpGet('https://raw.githubusercontent.com/RobloxScripts91/AdoptMeScripts/refs/heads/main/PetSpawnerNew'))()",
-      "loadstring(game:HttpGet('https://raw.githubusercontent.com/RobloxScripts91/AdoptMeScripts/refs/heads/main/PetSpawnerNew'))()"
-    ];
+  <!-- Adopt Me Section -->
+  <div id="adoptme" class="script-section">
+    <div class="script-title">Adopt Me Scripts</div>
+    <script>
+      const adoptScripts = [
+        {
+          code: "loadstring(game:HttpGet('https://raw.githubusercontent.com/RobloxScripts91/AdoptMeScripts/refs/heads/main/PetSpawnerNew'))()",
+          video: "https://www.youtube.com/watch?v=VIDEO_ID_1"
+        },
+        {
+          code: "loadstring(game:HttpGet('https://raw.githubusercontent.com/RobloxScripts91/AdoptMeScripts/refs/heads/main/AnotherPetScript'))()",
+          video: "https://www.youtube.com/watch?v=VIDEO_ID_2"
+        },
+        {
+          code: "loadstring(game:HttpGet('https://raw.githubusercontent.com/RobloxScripts91/AdoptMeScripts/refs/heads/main/FlyPetScript'))()",
+          video: "https://www.youtube.com/watch?v=VIDEO_ID_3"
+        },
+        {
+          code: "loadstring(game:HttpGet('https://raw.githubusercontent.com/RobloxScripts91/AdoptMeScripts/refs/heads/main/RidePetScript'))()",
+          video: "https://www.youtube.com/watch?v=VIDEO_ID_4"
+        },
+        {
+          code: "loadstring(game:HttpGet('https://raw.githubusercontent.com/RobloxScripts91/AdoptMeScripts/refs/heads/main/PetDupe'))()",
+          video: "https://www.youtube.com/watch?v=VIDEO_ID_5"
+        }
+      ];
 
-    adoptScriptCodes.forEach((script, i) => {
-      const num = i + 1;
-      document.write(`
-        <div class='script-box'>
-          <img src="images/adoptme${num}.jpg" alt="Adopt Me Script ${num}">
-          <button class="copy-btn" onclick="navigator.clipboard.writeText(\`${script}\`).then(() => alert('Copied Adopt Me Script ${num}!'))">Copy Script</button>
-          <div class="extra-btns">
-            <a class="extra-btn" href="https://www.youtube.com/@skibiditech007" target="_blank">Tutorial Download (IOS/ANDROID)</a>
-            <a class="extra-btn" href="https://deltaexploits.gg/" target="_blank">Android/IOS Delta Executor!</a>
+      adoptScripts.forEach((item, i) => {
+        const num = i + 1;
+        document.write(`
+          <div class='script-box'>
+            <a href="${item.video}" target="_blank">
+              <img src="images/adoptme${num}.jpg" alt="Adopt Me Script ${num}">
+            </a>
+            <button class="copy-btn" onclick="navigator.clipboard.writeText(\`${item.code}\`).then(() => alert('Copied Adopt Me Script ${num}!'))">Copy Script</button>
+            <div class="extra-btns">
+              <a class="extra-btn" href="https://www.youtube.com/@skibiditech007" target="_blank">Tutorial Download (IOS/ANDROID)</a>
+              <a class="extra-btn" href="https://deltaexploits.gg/" target="_blank">Android/IOS Delta Executor!</a>
+            </div>
           </div>
-        </div>
-      `);
-    });
-  </script>
-</div>
+        `);
+      });
+    </script>
+  </div>
 
-<!-- MM2 Section -->
-<div id="mm2" class="script-section">
-  <div class="script-title">Murder Mystery 2 Scripts</div>
-  <script>
-    const mm2Scripts = [
-      "-- Murder Mystery 2 Script 1\nprint('Script 1 active!')",
-      "-- Murder Mystery 2 Script 2\nprint('Script 2 activated!')",
-      "-- Murder Mystery 2 Script 3\nprint('Script 3 running!')",
-      "-- Murder Mystery 2 Script 4\nprint('Script 4 working!')",
-      "-- Murder Mystery 2 Script 5\nprint('Script 5 executing!')"
-    ];
+  <!-- MM2 Section -->
+  <div id="mm2" class="script-section">
+    <div class="script-title">Murder Mystery 2 Scripts</div>
+    <script>
+      const mm2Scripts = [
+        {
+          code: "-- MM2 Script 1\nprint('Script 1 active!')",
+          video: "https://www.youtube.com/watch?v=MM2_VIDEO_ID_1"
+        },
+        {
+          code: "-- MM2 Script 2\nprint('Script 2 active!')",
+          video: "https://www.youtube.com/watch?v=MM2_VIDEO_ID_2"
+        },
+        {
+          code: "-- MM2 Script 3\nprint('Script 3 active!')",
+          video: "https://www.youtube.com/watch?v=MM2_VIDEO_ID_3"
+        },
+        {
+          code: "-- MM2 Script 4\nprint('Script 4 active!')",
+          video: "https://www.youtube.com/watch?v=MM2_VIDEO_ID_4"
+        },
+        {
+          code: "-- MM2 Script 5\nprint('Script 5 active!')",
+          video: "https://www.youtube.com/watch?v=MM2_VIDEO_ID_5"
+        }
+      ];
 
-    mm2Scripts.forEach((script, i) => {
-      const num = i + 1;
-      document.write(`
-        <div class='script-box'>
-          <img src="images/mm2_${num}.jpg" alt="Murder Mystery 2 Script ${num}">
-          <button class="copy-btn" onclick="navigator.clipboard.writeText(\`${script}\`).then(() => alert('Copied Murder Mystery 2 Script ${num}!'))">Copy Script</button>
-          <div class="extra-btns">
-            <a class="extra-btn" href="https://www.youtube.com/@skibiditech007" target="_blank">Tutorial Download (IOS/ANDROID)</a>
-            <a class="extra-btn" href="https://deltaexploits.gg/" target="_blank">Android/IOS Delta Executor!</a>
+      mm2Scripts.forEach((item, i) => {
+        const num = i + 1;
+        document.write(`
+          <div class='script-box'>
+            <a href="${item.video}" target="_blank">
+              <img src="images/mm2_${num}.jpg" alt="MM2 Script ${num}">
+            </a>
+            <button class="copy-btn" onclick="navigator.clipboard.writeText(\`${item.code}\`).then(() => alert('Copied MM2 Script ${num}!'))">Copy Script</button>
+            <div class="extra-btns">
+              <a class="extra-btn" href="https://www.youtube.com/@skibiditech007" target="_blank">Tutorial Download (IOS/ANDROID)</a>
+              <a class="extra-btn" href="https://deltaexploits.gg/" target="_blank">Android/IOS Delta Executor!</a>
+            </div>
           </div>
-        </div>
-      `);
-    });
-  </script>
-</div>
-
+        `);
+      });
+    </script>
+  </div>
 
 </body>
 </html>
