@@ -126,38 +126,23 @@
     .home-card h2 {
       margin-bottom: 15px;
     }
-    /* Popup Styles */
-    #adoptPopup, #mm2Popup {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #000000cc;
-      z-index: 1000;
-      backdrop-filter: blur(4px);
-    }
-    .popup-content {
-      background: #222;
-      color: white;
-      border-radius: 10px;
-      padding: 30px;
-      max-width: 600px;
-      margin: 50px auto;
-      position: relative;
-    }
-    .popup-content ul {
-      columns: 2;
-      list-style: disc;
-      padding-left: 20px;
-    }
   </style>
   <script>
+    function copyScript(script) {
+      navigator.clipboard.writeText(script).then(() => {
+        alert("Script copied to clipboard!");
+      });
+    }
+
     function showSection(id) {
       const sections = document.querySelectorAll('.script-section');
       sections.forEach(section => section.classList.remove('active-section'));
       document.getElementById(id).classList.add('active-section');
+    }
+
+    function showSupported(content) {
+      const win = window.open('', 'Supported Items', 'width=400,height=400');
+      win.document.write('<html><head><title>Supported Items</title></head><body style="background:#111;color:white;font-family:Nunito;text-align:center;padding:20px;"><h2>Supported</h2><p>' + content + '</p></body></html>');
     }
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -192,14 +177,18 @@
   <!-- Adopt Me Section -->
   <div id="adoptme" class="script-section">
     <div class="script-title">Adopt Me Scripts</div>
-    <button class="copy-btn" onclick="document.getElementById('adoptPopup').style.display='block'">Supported Pets</button>
     <script>
       const adoptScripts = [
         {
           code: "loadstring(game:HttpGet('https://raw.githubusercontent.com/RobloxScripts91/AdoptMeScripts/refs/heads/main/PetSpawnerNew'))()",
           video: "https://youtu.be/EdRoD_leORI"
+        },
+        {
+          code: "loadstring(game:HttpGet('https://raw.githubusercontent.com/RobloxScripts91/AdoptMeScripts/refs/heads/main/PetSpawnerNew'))()",
+          video: "https://youtu.be/EdRoD_leORI"
         }
       ];
+
       adoptScripts.forEach((item, i) => {
         const num = i + 1;
         document.write(`
@@ -211,6 +200,7 @@
             <div class="extra-btns">
               <a class="extra-btn" href="https://www.youtube.com/@skibiditech007" target="_blank">Tutorial Download (IOS/ANDROID)</a>
               <a class="extra-btn" href="https://deltaexploits.gg/" target="_blank">Android/IOS Delta Executor!</a>
+              <button class="extra-btn" onclick="showSupported('Shadow Dragon, Frost Dragon, Giraffe, Bat Dragon')">Supported Pets</button>
             </div>
           </div>
         `);
@@ -221,14 +211,18 @@
   <!-- MM2 Section -->
   <div id="mm2" class="script-section">
     <div class="script-title">Murder Mystery 2 Scripts</div>
-    <button class="copy-btn" onclick="document.getElementById('mm2Popup').style.display='block'">Supported Items</button>
     <script>
       const mm2Scripts = [
         {
-          code: "-- MM2 Script\nprint('Script active!')",
+          code: "-- MM2 Script 1\nprint('Script 1 active!')",
           video: "https://www.youtube.com/watch?v=MM2_VIDEO_ID_1"
+        },
+        {
+          code: "-- MM2 Script 2\nprint('Script 2 active!')",
+          video: "https://www.youtube.com/watch?v=MM2_VIDEO_ID_2"
         }
       ];
+
       mm2Scripts.forEach((item, i) => {
         const num = i + 1;
         document.write(`
@@ -240,41 +234,12 @@
             <div class="extra-btns">
               <a class="extra-btn" href="https://www.youtube.com/@skibiditech007" target="_blank">Tutorial Download (IOS/ANDROID)</a>
               <a class="extra-btn" href="https://deltaexploits.gg/" target="_blank">Android/IOS Delta Executor!</a>
+              <button class="extra-btn" onclick="showSupported('Eternal IV, Corrupt, Luger, Chroma Darkbringer')">Supported Items</button>
             </div>
           </div>
         `);
       });
     </script>
-  </div>
-
-  <!-- Adopt Me Supported Pets Popup -->
-  <div id="adoptPopup">
-    <div class="popup-content">
-      <h2>Supported Pets</h2>
-      <ul>
-        <li>Shadow Dragon</li><li>Bat Dragon</li><li>Owl</li><li>Frost Dragon</li>
-        <li>Giraffe</li><li>Parrot</li><li>Blue Dog</li><li>Crow</li>
-        <li>Arctic Reindeer</li><li>Kangaroo</li><li>Hedgehog</li><li>Cow</li>
-        <li>Dalmatian</li><li>Ssbd</li><li>Ccbd</li><li>Frost Fury</li>
-        <li>Blazing Lion</li><li>Albino Monkey</li><li>Evil Unicorn</li><li>More...</li>
-      </ul>
-      <button class="copy-btn" onclick="document.getElementById('adoptPopup').style.display='none'">Close</button>
-    </div>
-  </div>
-
-  <!-- MM2 Supported Items Popup -->
-  <div id="mm2Popup">
-    <div class="popup-content">
-      <h2>Supported MM2 Items</h2>
-      <ul>
-        <li>Corrupt</li><li>Chroma Luger</li><li>Chroma Gemstone</li><li>Chroma Heat</li>
-        <li>Chroma Tides</li><li>Chroma Fang</li><li>Chroma Lightbringer</li><li>Chroma Darkbringer</li>
-        <li>Chroma Seer</li><li>Chroma Deathshard</li><li>Elderwood Scythe</li><li>Icebreaker</li>
-        <li>Icewing</li><li>Slasher</li><li>Luger</li><li>Gemstone</li>
-        <li>Laser</li><li>Tides</li><li>Fang</li><li>More...</li>
-      </ul>
-      <button class="copy-btn" onclick="document.getElementById('mm2Popup').style.display='none'">Close</button>
-    </div>
   </div>
 
 </body>
